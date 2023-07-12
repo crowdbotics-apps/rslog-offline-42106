@@ -41,24 +41,24 @@ const AddCardDetailsScreen = () => {
             <TextInput style={styles.input} onChangeText={text => setCity(text)} value={city} placeholder="Enter Project No." placeholderTextColor="#9B9B9B" autoCapitalize="none" autoCorrect={false} />
           </View>
           <View style={styles.inputContainer}>
-            <Text style={styles.inputText}>State</Text>
-            <TextInput style={styles.input} onChangeText={text => setState(text)} value={state} placeholder="Enter your State" placeholderTextColor="#9B9B9B" autoCapitalize="none" autoCorrect={false} />
+            <Text style={styles.inputText}>{"Lead Engineer"}</Text>
+            <TextInput style={styles.input} onChangeText={text => setState(text)} value={state} placeholder="Enter Lead Engineer" placeholderTextColor="#9B9B9B" autoCapitalize="none" autoCorrect={false} />
           </View>
         </View>
         <View style={styles.halfInputs}>
           <View style={styles.inputContainer}>
-            <Text style={styles.inputText}>Zip</Text>
-            <TextInput style={styles.input} onChangeText={text => setZip(text)} value={zip} placeholder="Enter your Zip Code" placeholderTextColor="#9B9B9B" autoCapitalize="none" autoCorrect={false} />
+            <Text style={styles.inputText}>{"Unit System"}</Text>
+            <TextInput style={styles.input} onChangeText={text => setZip(text)} value={zip} placeholder="Enter Unit System" placeholderTextColor="#9B9B9B" autoCapitalize="none" autoCorrect={false} />
           </View>
           <View style={styles.inputContainer}>
-            <Text style={styles.inputText}>Country</Text>
-            <TextInput style={styles.input} onChangeText={text => setCountry(text)} value={country} placeholder="Enter your Country" placeholderTextColor="#9B9B9B" autoCapitalize="none" autoCorrect={false} />
+            <Text style={styles.inputText}>{"Coordinate System"}</Text>
+            <TextInput style={styles.input} onChangeText={text => setCountry(text)} value={country} placeholder="Enter Coordinate System" placeholderTextColor="#9B9B9B" autoCapitalize="none" autoCorrect={false} />
           </View>
         </View>
         <View style={styles.halfInputs}>
           <View style={styles.inputContainer}>
-            <Text style={styles.inputText}>Card Expiration</Text>
-            <TextInput style={styles.input} onChangeText={text => setCardExpiry(text)} value={cardExpiry} placeholder="Enter Card Expiration" placeholderTextColor="#9B9B9B" autoCapitalize="none" autoCorrect={false} />
+            <Text style={styles.inputText}>{"Set UTM Zone"}</Text>
+            <TextInput style={styles.input} onChangeText={text => setCardExpiry(text)} value={cardExpiry} placeholder="Enter UTM Zone" placeholderTextColor="#9B9B9B" autoCapitalize="none" autoCorrect={false} />
           </View>
           <View style={styles.inputContainer}>
             <Text style={styles.inputText}>CVV</Text>
