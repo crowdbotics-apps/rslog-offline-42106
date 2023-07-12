@@ -5,7 +5,7 @@ export const globalOptions = {
   "screenOptions": {
     "headerShown": false
   },
-  "initialRoute": "addCardDetails"
+  "initialRoute": "MyTabs"
 };
 export const modulesOptions = {
   "@modules/app-menu": {

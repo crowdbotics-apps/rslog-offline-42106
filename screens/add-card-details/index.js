@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Text, StyleSheet, View, ScrollView, SafeAreaView, TextInput, Pressable } from "react-native";
 
-const AddCardDetailsScreen = params => {
+const AddCardDetailsScreen = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [address1, setAddress1] = useState("");
@@ -15,37 +15,30 @@ const AddCardDetailsScreen = params => {
   return <SafeAreaView style={styles.container}>
       <ScrollView>
         <View style={styles.header}>
-          <View style={styles.paletteContainer}>
-            <View style={styles.unSelected}>
-              <Text>Linked Cards</Text>
-            </View>
-            <View style={styles.selected}>
-              <Text>Add Card</Text>
-            </View>
-          </View>
+          
         </View>
         <View style={styles.fullInputs}>
           <View style={styles.inputContainer}>
-            <Text style={styles.inputText}>First Name</Text>
-            <TextInput style={styles.input} onChangeText={text => setFirstName(text)} value={firstName} placeholder="Enter your first name" placeholderTextColor="#9B9B9B" autoCapitalize="none" autoCorrect={false} />
+            <Text style={styles.inputText}>{"Title"}</Text>
+            <TextInput style={styles.input} onChangeText={text => setFirstName(text)} value={firstName} placeholder="Enter Project Title" placeholderTextColor="#9B9B9B" autoCapitalize="none" autoCorrect={false} />
           </View>
           <View style={styles.inputContainer}>
-            <Text style={styles.inputText}>Last Name</Text>
-            <TextInput style={styles.input} onChangeText={text => setLastName(text)} value={lastName} placeholder="Enter your last name" placeholderTextColor="#9B9B9B" autoCapitalize="none" autoCorrect={false} />
+            <Text style={styles.inputText}>{"Client"}</Text>
+            <TextInput style={styles.input} onChangeText={text => setLastName(text)} value={lastName} placeholder="Enter Client Name" placeholderTextColor="#9B9B9B" autoCapitalize="none" autoCorrect={false} />
           </View>
           <View style={styles.inputContainer}>
-            <Text style={styles.inputText}>Address 1</Text>
-            <TextInput style={styles.input} onChangeText={text => setAddress1(text)} value={address1} placeholder="Enter your Address" placeholderTextColor="#9B9B9B" autoCapitalize="none" autoCorrect={false} />
+            <Text style={styles.inputText}>{"Site Location"}</Text>
+            <TextInput style={styles.input} onChangeText={text => setAddress1(text)} value={address1} placeholder="Enter Site Location" placeholderTextColor="#9B9B9B" autoCapitalize="none" autoCorrect={false} />
           </View>
           <View style={styles.inputContainer}>
-            <Text style={styles.inputText}>Address 2</Text>
+            <Text style={styles.inputText}>{"Easting (X)"}</Text>
             <TextInput style={styles.input} onChangeText={text => setAddress2(text)} value={address2} placeholder="Enter your Address" placeholderTextColor="#9B9B9B" autoCapitalize="none" autoCorrect={false} />
           </View>
         </View>
         <View style={styles.halfInputs}>
           <View style={styles.inputContainer}>
-            <Text style={styles.inputText}>City</Text>
-            <TextInput style={styles.input} onChangeText={text => setCity(text)} value={city} placeholder="Enter your City" placeholderTextColor="#9B9B9B" autoCapitalize="none" autoCorrect={false} />
+            <Text style={styles.inputText}>{"Project No."}</Text>
+            <TextInput style={styles.input} onChangeText={text => setCity(text)} value={city} placeholder="Enter Project No." placeholderTextColor="#9B9B9B" autoCapitalize="none" autoCorrect={false} />
           </View>
           <View style={styles.inputContainer}>
             <Text style={styles.inputText}>State</Text>
@@ -88,28 +81,6 @@ const styles = StyleSheet.create({
   },
   header: {
     padding: 20
-  },
-  paletteContainer: {
-    flexDirection: "row",
-    backgroundColor: "#F1F1F1",
-    height: 60,
-    width: 250,
-    borderRadius: 10,
-    alignItems: "center",
-    justifyContent: "space-around",
-    paddingHorizontal: 15
-  },
-  selected: {
-    backgroundColor: "#fff",
-    padding: 10,
-    paddingHorizontal: 25,
-    borderRadius: 10,
-    borderWidth: 1,
-    borderColor: "#e6e6e6"
-  },
-  unSelected: {
-    padding: 10,
-    paddingHorizontal: 25
   },
   fullInputs: {
     paddingHorizontal: 20,
