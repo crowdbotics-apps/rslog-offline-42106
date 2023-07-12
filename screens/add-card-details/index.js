@@ -61,8 +61,8 @@ const AddCardDetailsScreen = () => {
             <TextInput style={styles.input} onChangeText={text => setCardExpiry(text)} value={cardExpiry} placeholder="Enter UTM Zone" placeholderTextColor="#9B9B9B" autoCapitalize="none" autoCorrect={false} />
           </View>
           <View style={styles.inputContainer}>
-            <Text style={styles.inputText}>CVV</Text>
-            <TextInput style={styles.input} onChangeText={text => setCvv(text)} value={cvv} placeholder="Enter your CVV" placeholderTextColor="#9B9B9B" autoCapitalize="none" autoCorrect={false} />
+            <Text style={styles.inputText}>{"  "}</Text>
+            <TextInput style={styles.input} onChangeText={text => setCvv(text)} value={cvv} placeholder="U" placeholderTextColor="#9B9B9B" autoCapitalize="none" autoCorrect={false} />
           </View>
         </View>
         <View style={styles.btnContainer}>
