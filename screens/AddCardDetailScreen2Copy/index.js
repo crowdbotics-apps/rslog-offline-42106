@@ -7,87 +7,76 @@ const AddCardDetailsScreen = ({
 }) => {
   const navigation = useNavigation();
   const {} = route.params || {};
-  const [testHoleType, setTestHoleType] = useState("");
-  const [name, setName] = useState("");
-  const [drillingContractor, setDrillingContractor] = useState("");
-  const [depth, setDepth] = useState("");
-  const [loggedBy, setLoggedBy] = useState("");
-  const [enteredBy, setEnteredBy] = useState("");
-  const [reviewedBy, setReviewedBy] = useState("");
-  const [startDate, setStartDate] = useState("");
-  const [endDate, setEndDate] = useState("");
-  const [equipment, setEquipment] = useState("");
-  const [holeSize, setHoleSize] = useState("");
+  const [overburdenThickness, setOverburdenThickness] = useState("");
+  const [rockDepth, setRockDepth] = useState("");
+  const [coreBoxCount, setCoreBoxCount] = useState("");
+  const [drillerName, setDrillerName] = useState("");
+  const [disturbed, setDisturbed] = useState("");
+  const [undisturbed, setUndisturbed] = useState("");
   return <SafeAreaView style={styles.container}>
       <ScrollView>
         <View style={styles.header}></View>
         <View style={styles.fullInputs}>
-          <View style={styles.column}>
-            <View style={styles.inputContainer}>
-              <Text style={styles.inputText}>{"Test Hole Type"}</Text>
-              <TextInput style={styles.input} onChangeText={text => setTestHoleType(text)} value={testHoleType} placeholder="Enter Test Hole Type" placeholderTextColor="#9B9B9B" autoCapitalize="none" autoCorrect={false} />
-            </View>
-            <View style={styles.inputContainer}>
-              <Text style={styles.inputText}>{"Name"}</Text>
-              <TextInput style={styles.input} onChangeText={text => setName(text)} value={name} placeholder="Enter Name" placeholderTextColor="#9B9B9B" autoCapitalize="none" autoCorrect={false} />
-            </View>
-            <View style={styles.inputContainer}>
-              <Text style={styles.inputText}>{"Drilling Contractor"}</Text>
-              <TextInput style={styles.input} onChangeText={text => setDrillingContractor(text)} value={drillingContractor} placeholder="Enter Drilling Contractor" placeholderTextColor="#9B9B9B" autoCapitalize="none" autoCorrect={false} />
-            </View>
-          </View>
-          <View style={styles.column}>
-            <View style={styles.inputContainer}>
-              <Text style={styles.inputText}>{"Depth (ft)"}</Text>
-              <TextInput style={styles.input} onChangeText={text => setDepth(text)} value={depth} placeholder="Enter Depth (ft)" placeholderTextColor="#9B9B9B" autoCapitalize="none" autoCorrect={false} />
-            </View>
-            <View style={styles.inputContainer}>
-              <Text style={styles.inputText}>{"Logged By"}</Text>
-              <TextInput style={styles.input} onChangeText={text => setLoggedBy(text)} value={loggedBy} placeholder="Enter Logged By" placeholderTextColor="#9B9B9B" autoCapitalize="none" autoCorrect={false} />
-            </View>
-            <View style={styles.inputContainer}>
-              <Text style={styles.inputText}>{"Entered By"}</Text>
-              <TextInput style={styles.input} onChangeText={text => setEnteredBy(text)} value={enteredBy} placeholder="Enter Entered By" placeholderTextColor="#9B9B9B" autoCapitalize="none" autoCorrect={false} />
-            </View>
-          </View>
-          <View style={styles.column}>
-            <View style={styles.inputContainer}>
-              <Text style={styles.inputText}>{"Reviewed By"}</Text>
-              <TextInput style={styles.input} onChangeText={text => setReviewedBy(text)} value={reviewedBy} placeholder="Enter Reviewed By" placeholderTextColor="#9B9B9B" autoCapitalize="none" autoCorrect={false} />
-            </View>
-            <View style={styles.inputContainer}>
-              <Text style={styles.inputText}>{"Start Date"}</Text>
-              <TextInput style={styles.input} onChangeText={text => setStartDate(text)} value={startDate} placeholder="Enter Start Date" placeholderTextColor="#9B9B9B" autoCapitalize="none" autoCorrect={false} />
-            </View>
-            <View style={styles.inputContainer}>
-              <Text style={styles.inputText}>{"End Date"}</Text>
-              <TextInput style={styles.input} onChangeText={text => setEndDate(text)} value={endDate} placeholder="Enter End Date" placeholderTextColor="#9B9B9B" autoCapitalize="none" autoCorrect={false} />
-            </View>
-          </View>
+          
+          
         </View>
+
         <View style={styles.fullInputs}>
           <View style={styles.column}>
             <View style={styles.inputContainer}>
-              <Text style={styles.inputText}>{"Equipment"}</Text>
-              <TextInput style={styles.input} onChangeText={text => setEquipment(text)} value={equipment} placeholder="Enter Equipment" placeholderTextColor="#9B9B9B" autoCapitalize="none" autoCorrect={false} />
+              <Text style={styles.inputText}>{"Thickness of Overburden (ft)"}</Text>
+              <TextInput style={styles.input} onChangeText={text => setOverburdenThickness(text)} value={overburdenThickness} placeholder="Enter Thickness of Overburden (ft)" placeholderTextColor="#9B9B9B" autoCapitalize="none" autoCorrect={false} />
             </View>
           </View>
           <View style={styles.column}>
             <View style={styles.inputContainer}>
-              <Text style={styles.inputText}>{"Hole & Drill Bit Size (in)"}</Text>
-              <TextInput style={styles.input} onChangeText={text => setHoleSize(text)} value={holeSize} placeholder="Enter Hole & Drill Bit Size (in)" placeholderTextColor="#9B9B9B" autoCapitalize="none" autoCorrect={false} />
+              <Text style={styles.inputText}>{"Depth Drilled into Rock (ft)"}</Text>
+              <TextInput style={styles.input} onChangeText={text => setRockDepth(text)} value={rockDepth} placeholder="Enter Depth Drilled into Rock (ft)" placeholderTextColor="#9B9B9B" autoCapitalize="none" autoCorrect={false} />
             </View>
           </View>
         </View>
+
+        <View style={styles.fullInputs}>
+          <View style={styles.column}>
+            <View style={styles.inputContainer}>
+              <Text style={styles.inputText}>{"Total # of Core Boxes"}</Text>
+              <TextInput style={styles.input} onChangeText={text => setCoreBoxCount(text)} value={coreBoxCount} placeholder="Enter Total # of Core Boxes" placeholderTextColor="#9B9B9B" autoCapitalize="none" autoCorrect={false} />
+            </View>
+          </View>
+          <View style={styles.column}>
+            <View style={styles.inputContainer}>
+              <Text style={styles.inputText}>{"Name of Driller"}</Text>
+              <TextInput style={styles.input} onChangeText={text => setDrillerName(text)} value={drillerName} placeholder="Enter Name of Driller" placeholderTextColor="#9B9B9B" autoCapitalize="none" autoCorrect={false} />
+            </View>
+          </View>
+        </View>
+
+        <View style={styles.fullInputs}>
+          <View style={styles.column}>
+            <View style={styles.inputContainer}>
+              <Text style={styles.inputText}>{"Disturbed"}</Text>
+              <TextInput style={styles.input} onChangeText={text => setDisturbed(text)} value={disturbed} placeholder="Enter Disturbed" placeholderTextColor="#9B9B9B" autoCapitalize="none" autoCorrect={false} />
+            </View>
+          </View>
+          <View style={styles.column}>
+            <View style={styles.inputContainer}>
+              <Text style={styles.inputText}>{"Undisturbed"}</Text>
+              <TextInput style={styles.input} onChangeText={text => setUndisturbed(text)} value={undisturbed} placeholder="Enter Undisturbed" placeholderTextColor="#9B9B9B" autoCapitalize="none" autoCorrect={false} />
+            </View>
+          </View>
+        </View>
+
         <Pressable onPress={() => {
         navigation.navigate("GeneralBoreholeCopy", {
           projectId: "projectId"
         });
-      }}><View style={styles.btnContainer}>
-          <Pressable style={styles.btn}>
-            <Text style={styles.btnText}>Update</Text>
-          </Pressable>
-        </View></Pressable>
+      }}>
+          <View style={styles.btnContainer}>
+            <Pressable style={styles.btn}>
+              <Text style={styles.btnText}>Update</Text>
+            </Pressable>
+          </View>
+        </Pressable>
       </ScrollView>
     </SafeAreaView>;
 };
