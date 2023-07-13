@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Text, StyleSheet, View, ScrollView, SafeAreaView, TextInput, Pressable } from "react-native";
+import { Text, StyleSheet, View, ScrollView, SafeAreaView, TextInput, Pressable, Picker } from "react-native";
 
 const AddCardDetailsScreen = () => {
   const [firstName, setFirstName] = useState("");
@@ -14,9 +14,7 @@ const AddCardDetailsScreen = () => {
   const [cvv, setCvv] = useState("");
   return <SafeAreaView style={styles.container}>
       <ScrollView>
-        <View style={styles.header}>
-          
-        </View>
+        <View style={styles.header}></View>
         <View style={styles.fullInputs}>
           <View style={styles.inputContainer}>
             <Text style={styles.inputText}>{"Title"}</Text>
@@ -56,6 +54,14 @@ const AddCardDetailsScreen = () => {
           </View>
         </View>
         <View style={styles.halfInputs}>
+          <View style={styles.inputContainer}>
+            <Text style={styles.inputText}>Geography</Text>
+            <Picker style={styles.input}>
+              <Picker.Item style={styles.input} label="Option 1" value="option1" />
+              <Picker.Item style={styles.input} label="Option 2" value="option2" />
+              <Picker.Item style={styles.input} label="Option 3" value="option3" />
+            </Picker>
+          </View>
           <View style={styles.inputContainer}>
             <Text style={styles.inputText}>{"Set UTM Zone"}</Text>
             <TextInput style={styles.input} onChangeText={text => setCardExpiry(text)} value={cardExpiry} placeholder="Enter UTM Zone" placeholderTextColor="#9B9B9B" autoCapitalize="none" autoCorrect={false} />
