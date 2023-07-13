@@ -13,7 +13,6 @@ const AddCardDetailsScreen = () => {
   const [endDate, setEndDate] = useState("");
   const [equipment, setEquipment] = useState("");
   const [holeSize, setHoleSize] = useState("");
-  const [dateTime, setDateTime] = useState("");
   const [easting, setEasting] = useState("");
   const [northing, setNorthing] = useState("");
   const [elevation, setElevation] = useState("");
@@ -79,10 +78,7 @@ const AddCardDetailsScreen = () => {
               </Text>
               <TextInput style={styles.input} onChangeText={text => setHoleSize(text)} value={holeSize} placeholder="Enter Hole & Drill Bit Size (in)" placeholderTextColor="#9B9B9B" autoCapitalize="none" autoCorrect={false} />
             </View>
-            <View style={styles.inputContainer}>
-              <Text style={styles.inputText}>{"Date & Time"}</Text>
-              <TextInput style={styles.input} onChangeText={text => setDateTime(text)} value={dateTime} placeholder="Enter Date & Time" placeholderTextColor="#9B9B9B" autoCapitalize="none" autoCorrect={false} />
-            </View>
+            
           </View>
         </View>
         <View style={styles.fullInputs}>
