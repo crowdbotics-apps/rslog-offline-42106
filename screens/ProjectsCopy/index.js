@@ -2,35 +2,64 @@ import React, { useState } from "react";
 import { Text, StyleSheet, View, ScrollView, SafeAreaView, TextInput, Pressable } from "react-native";
 
 const AddCardDetailsScreen = () => {
-  const [projectNo, setProjectNo] = useState("");
-  const [leadEngineer, setLeadEngineer] = useState("");
-  const [date, setDate] = useState("");
-  const [time, setTime] = useState("");
-  const [casingDepth, setCasingDepth] = useState("");
-  const [depthToWater, setDepthToWater] = useState("");
+  const [depth, setDepth] = useState("");
+  const [to, setTo] = useState("");
+  const [sampleNo, setSampleNo] = useState("");
+  const [color, setColor] = useState("");
+  const [sampleType, setSampleType] = useState("");
+  const [moistureLevel, setMoistureLevel] = useState("");
+  const [sampleDescription, setSampleDescription] = useState("");
   return <SafeAreaView style={styles.container}>
       <ScrollView>
         <View style={styles.header}></View>
 
         <View style={styles.fullInputs}>
           <View style={styles.column}>
+            
+            
             <View style={styles.inputContainer}>
-              <Text style={styles.inputText}>{"Date"}</Text>
-              <TextInput style={styles.input} onChangeText={text => setDate(text)} value={date} placeholder="Enter Date" placeholderTextColor="#9B9B9B" autoCapitalize="none" autoCorrect={false} />
+              <Text style={styles.inputText}>{"Depth (ft)"}</Text>
+              <TextInput style={styles.input} onChangeText={text => setDepth(text)} value={depth} placeholder="Enter Depth (ft)" placeholderTextColor="#9B9B9B" autoCapitalize="none" autoCorrect={false} />
             </View>
             <View style={styles.inputContainer}>
-              <Text style={styles.inputText}>{"Casing Depth (ft)"}</Text>
-              <TextInput style={styles.input} onChangeText={text => setCasingDepth(text)} value={casingDepth} placeholder="Enter Casing Depth (ft)" placeholderTextColor="#9B9B9B" autoCapitalize="none" autoCorrect={false} />
+              <Text style={styles.inputText}>{"Sample No."}</Text>
+              <TextInput style={styles.input} onChangeText={text => setSampleNo(text)} value={sampleNo} placeholder="Enter Sample No." placeholderTextColor="#9B9B9B" autoCapitalize="none" autoCorrect={false} />
+            </View>
+          </View>
+          <View style={styles.column}>
+            
+            
+            <View style={styles.inputContainer}>
+              <Text style={styles.inputText}>{"To (ft)"}</Text>
+              <TextInput style={styles.input} onChangeText={text => setTo(text)} value={to} placeholder="Enter To (ft)" placeholderTextColor="#9B9B9B" autoCapitalize="none" autoCorrect={false} />
+            </View>
+            <View style={styles.inputContainer}>
+              <Text style={styles.inputText}>{"Color"}</Text>
+              <TextInput style={styles.input} onChangeText={text => setColor(text)} value={color} placeholder="Enter Color" placeholderTextColor="#9B9B9B" autoCapitalize="none" autoCorrect={false} />
+            </View>
+          </View>
+        </View>
+
+        <View style={styles.fullInputs}>
+          <View style={styles.column}>
+            <View style={styles.inputContainer}>
+              <Text style={styles.inputText}>{"Sample Type"}</Text>
+              <TextInput style={styles.input} onChangeText={text => setSampleType(text)} value={sampleType} placeholder="Enter Sample Type" placeholderTextColor="#9B9B9B" autoCapitalize="none" autoCorrect={false} />
             </View>
           </View>
           <View style={styles.column}>
             <View style={styles.inputContainer}>
-              <Text style={styles.inputText}>{"Time"}</Text>
-              <TextInput style={styles.input} onChangeText={text => setTime(text)} value={time} placeholder="Enter Time" placeholderTextColor="#9B9B9B" autoCapitalize="none" autoCorrect={false} />
+              <Text style={styles.inputText}>{"Moisture Level"}</Text>
+              <TextInput style={styles.input} onChangeText={text => setMoistureLevel(text)} value={moistureLevel} placeholder="Enter Moisture Level" placeholderTextColor="#9B9B9B" autoCapitalize="none" autoCorrect={false} />
             </View>
+          </View>
+        </View>
+
+        <View style={styles.fullInputs}>
+          <View style={styles.column}>
             <View style={styles.inputContainer}>
-              <Text style={styles.inputText}>{"Depth to Water (ft)"}</Text>
-              <TextInput style={styles.input} onChangeText={text => setDepthToWater(text)} value={depthToWater} placeholder="Enter Depth to Water (ft)" placeholderTextColor="#9B9B9B" autoCapitalize="none" autoCorrect={false} />
+              <Text style={styles.inputText}>{"Sample Description"}</Text>
+              <TextInput style={styles.input} onChangeText={text => setSampleDescription(text)} value={sampleDescription} placeholder="Enter Sample Description" placeholderTextColor="#9B9B9B" autoCapitalize="none" autoCorrect={false} />
             </View>
           </View>
         </View>
@@ -105,41 +134,6 @@ const styles = StyleSheet.create({
     color: "#fff",
     fontSize: 16,
     fontWeight: "bold"
-  },
-  headerText: {
-    width: 192,
-    height: 50,
-    lineHeight: 14,
-    fontSize: 18,
-    borderRadius: 0,
-    fontWeight: "700"
-  },
-  radioContainer: {
-    paddingHorizontal: 20,
-    marginTop: 20
-  },
-  radioLabel: {
-    fontSize: 16,
-    marginBottom: 10
-  },
-  radioOption: {
-    flexDirection: "row",
-    alignItems: "center",
-    marginBottom: 10
-  },
-  radioButton: {
-    width: 20,
-    height: 20,
-    borderRadius: 10,
-    borderWidth: 2,
-    borderColor: "#9B9B9B",
-    marginRight: 10
-  },
-  radioButtonSelected: {
-    backgroundColor: "black"
-  },
-  radioOptionText: {
-    fontSize: 16
   }
 });
 export default AddCardDetailsScreen;
