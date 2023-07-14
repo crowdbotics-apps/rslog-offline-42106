@@ -1,23 +1,30 @@
 import React, { useState } from "react";
-import { Text, StyleSheet, View, ScrollView, SafeAreaView, Pressable, TextInput } from "react-native";
+import { Text, StyleSheet, View, ScrollView, SafeAreaView, Pressable, TextInput, Picker } from "react-native";
 
 const AddCardDetailsScreen = () => {
   const [tableData, setTableData] = useState([]);
-  const [timeElapsed, setTimeElapsed] = useState("");
-  const [waterDepth, setWaterDepth] = useState("");
-  const [notes, setNotes] = useState("");
+  const [depth, setDepth] = useState("");
+  const [reportingValue, setReportingValue] = useState("");
+  const [n, setN] = useState("");
+  const [n60, setN60] = useState("");
+  const [u2, setU2] = useState("");
+  const [testType, setTestType] = useState("");
 
   const handleAddRow = () => {
     const newRow = {
       id: tableData.length + 1,
-      timeElapsed: timeElapsed,
-      waterDepth: waterDepth,
-      notes: notes
+      depth: depth,
+      reportingValue: reportingValue,
+      n: n,
+      n60: n60,
+      u2: u2
     };
     setTableData([...tableData, newRow]);
-    setTimeElapsed("");
-    setWaterDepth("");
-    setNotes("");
+    setDepth("");
+    setReportingValue("");
+    setN("");
+    setN60("");
+    setU2("");
   };
 
   const handleDeleteRow = id => {
@@ -28,9 +35,11 @@ const AddCardDetailsScreen = () => {
   const renderTableItem = ({
     item
   }) => <View style={styles.tableRow}>
-      <TextInput style={styles.tableCell} value={item.timeElapsed} onChangeText={text => handleTableDataChange(item.id, "timeElapsed", text)} />
-      <TextInput style={styles.tableCell} value={item.waterDepth} onChangeText={text => handleTableDataChange(item.id, "waterDepth", text)} />
-      <TextInput style={styles.tableCell} value={item.notes} onChangeText={text => handleTableDataChange(item.id, "notes", text)} />
+      <TextInput style={styles.tableCell} value={item.depth} onChangeText={text => handleTableDataChange(item.id, "depth", text)} />
+      <TextInput style={styles.tableCell} value={item.reportingValue} onChangeText={text => handleTableDataChange(item.id, "reportingValue", text)} />
+      <TextInput style={styles.tableCell} value={item.n} onChangeText={text => handleTableDataChange(item.id, "n", text)} />
+      <TextInput style={styles.tableCell} value={item.n60} onChangeText={text => handleTableDataChange(item.id, "n60", text)} />
+      <TextInput style={styles.tableCell} value={item.u2} onChangeText={text => handleTableDataChange(item.id, "u2", text)} />
       <Pressable style={styles.deleteBtn} onPress={() => handleDeleteRow(item.id)}>
         <Text style={styles.deleteBtnText}>Delete Row</Text>
       </Pressable>
@@ -51,29 +60,33 @@ const AddCardDetailsScreen = () => {
 
   return <SafeAreaView style={styles.container}>
       <ScrollView>
-        <View style={styles.header}></View>
-
-        <View style={styles.btnContainer}>
-          <Pressable style={styles.btn} onPress={handleAddRow}>
-            <Text style={styles.btnText}>Add Row</Text>
-          </Pressable>
+        <View style={styles.header}>
+          <Picker style={styles.dropdown} selectedValue={testType} onValueChange={value => setTestType(value)}>
+            <Picker.Item label="Test Type" value="" />
+            <Picker.Item label="Type 1" value="type1" />
+            <Picker.Item label="Type 2" value="type2" />
+            <Picker.Item label="Type 3" value="type3" />
+          </Picker>
         </View>
 
         <View style={styles.tableContainer}>
           <View style={styles.tableHeader}>
-            <Text style={styles.tableHeaderText}>Time Elapsed (min)</Text>
-            <Text style={styles.tableHeaderText}>Water Depth (ft)</Text>
-            <Text style={styles.tableHeaderText}>Notes</Text>
+            <Text style={styles.tableHeaderText}>Depth (ft)</Text>
+            <Text style={styles.tableHeaderText}>Reporting Value</Text>
+            <Text style={styles.tableHeaderText}>N</Text>
+            <Text style={styles.tableHeaderText}>N60</Text>
+            <Text style={styles.tableHeaderText}>u2</Text>
             <Text style={styles.tableHeaderText}></Text>
           </View>
-          {tableData.map(item => <View style={styles.tableRow} key={item.id}>
-              <TextInput style={styles.tableCell} value={item.timeElapsed} onChangeText={text => handleTableDataChange(item.id, "timeElapsed", text)} />
-              <TextInput style={styles.tableCell} value={item.waterDepth} onChangeText={text => handleTableDataChange(item.id, "waterDepth", text)} />
-              <TextInput style={styles.tableCell} value={item.notes} onChangeText={text => handleTableDataChange(item.id, "notes", text)} />
-              <Pressable style={styles.deleteBtn} onPress={() => handleDeleteRow(item.id)}>
-                <Text style={styles.deleteBtnText}>Delete Row</Text>
-              </Pressable>
-            </View>)}
+          {tableData.map(row => {
+          return renderTableItem(row);
+        })}
+
+          <View style={styles.btnContainer}>
+            <Pressable style={styles.btn} onPress={handleAddRow}>
+              <Text style={styles.btnText}>Add Row</Text>
+            </Pressable>
+          </View>
         </View>
       </ScrollView>
     </SafeAreaView>;
@@ -86,6 +99,15 @@ const styles = StyleSheet.create({
   },
   header: {
     padding: 20
+  },
+  dropdown: {
+    borderWidth: 1,
+    borderColor: "#e6e6e6",
+    borderRadius: 10,
+    padding: 10,
+    paddingLeft: 20,
+    marginVertical: 10,
+    width: "100%"
   },
   inputContainer: {
     flexDirection: "column",
