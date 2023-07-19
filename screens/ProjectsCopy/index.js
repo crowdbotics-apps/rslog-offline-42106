@@ -9,14 +9,14 @@ const AddCardDetailsScreen = () => {
   const [sampleType, setSampleType] = useState("");
   const [moistureLevel, setMoistureLevel] = useState("");
   const [sampleDescription, setSampleDescription] = useState("");
+  const [date, setDate] = useState(""); // Added date state
+
   return <SafeAreaView style={styles.container}>
       <ScrollView>
         <View style={styles.header}></View>
 
         <View style={styles.fullInputs}>
           <View style={styles.column}>
-            
-            
             <View style={styles.inputContainer}>
               <Text style={styles.inputText}>{"Depth (ft)"}</Text>
               <TextInput style={styles.input} onChangeText={text => setDepth(text)} value={depth} placeholder="Enter Depth (ft)" placeholderTextColor="#9B9B9B" autoCapitalize="none" autoCorrect={false} />
@@ -27,8 +27,6 @@ const AddCardDetailsScreen = () => {
             </View>
           </View>
           <View style={styles.column}>
-            
-            
             <View style={styles.inputContainer}>
               <Text style={styles.inputText}>{"To (ft)"}</Text>
               <TextInput style={styles.input} onChangeText={text => setTo(text)} value={to} placeholder="Enter To (ft)" placeholderTextColor="#9B9B9B" autoCapitalize="none" autoCorrect={false} />
@@ -60,6 +58,15 @@ const AddCardDetailsScreen = () => {
             <View style={styles.inputContainer}>
               <Text style={styles.inputText}>{"Sample Description"}</Text>
               <TextInput style={styles.input} onChangeText={text => setSampleDescription(text)} value={sampleDescription} placeholder="Enter Sample Description" placeholderTextColor="#9B9B9B" autoCapitalize="none" autoCorrect={false} />
+            </View>
+          </View>
+        </View>
+
+        <View style={styles.fullInputs}>
+          <View style={styles.column}>
+            <View style={styles.inputContainer}>
+              <Text style={styles.inputText}>{"Date"}</Text>
+              <TextInput style={styles.input} onChangeText={text => setDate(text)} value={date} placeholder="Enter Date" placeholderTextColor="#9B9B9B" autoCapitalize="none" autoCorrect={false} />
             </View>
           </View>
         </View>
